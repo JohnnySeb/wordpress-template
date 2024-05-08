@@ -11,7 +11,7 @@
 |
 */
 
-if (! file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
+if (!file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
     wp_die(__('Error locating autoloader. Please run <code>composer install</code>.', 'sage'));
 }
 
@@ -29,7 +29,7 @@ require $composer;
 |
 */
 
-if (! function_exists('\Roots\bootloader')) {
+if (!function_exists('\Roots\bootloader')) {
     wp_die(
         __('You need to install Acorn to use this theme.', 'sage'),
         '',
@@ -56,10 +56,36 @@ if (! function_exists('\Roots\bootloader')) {
 
 collect(['setup', 'filters'])
     ->each(function ($file) {
-        if (! locate_template($file = "app/{$file}.php", true, true)) {
+        if (!locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
                 /* translators: %s is replaced with the relative file path */
                 sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file)
             );
         }
     });
+
+function custom_block_category($categories, $post)
+{
+    return array_merge(
+        array(
+            array(
+                'slug'  => 'blocs-JS',
+                'title' => 'Blocs JS',
+                'icon'  => 'smiley',
+            ),
+        ),
+        $categories
+    );
+}
+add_filter('block_categories_all', 'custom_block_category', 10, 2);
+
+function custom_block_category_order($categories)
+{
+    if (isset($categories['blocs-JS'])) {
+        $custom_category = array('blocs-JS' => $categories['blocs-JS']);
+        unset($categories['blocs-JS']);
+        return array_merge($custom_category, $categories);
+    }
+    return $categories;
+}
+add_filter('block_categories', 'custom_block_category_order', 10, 2);

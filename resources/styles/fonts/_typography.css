@@ -1,0 +1,112 @@
+body {
+  @apply font-body text-blue-900 text-16 md:text-18;
+  
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  p {
+    line-height: 1.1 !important;
+  }
+}
+
+h1,
+.h1 {
+  @apply relative block font-display mb-10 lg:mb-12 text-36 md:text-48 lg:text-60 xl:text-74;
+}
+
+h2,
+.h2 {
+  @apply relative block font-display mb-4 lg:mb-10 text-28 md:text-30 lg:text-36 xl:text-48;
+}
+
+h3,
+.h3 {
+  @apply relative block font-display mb-2 lg:mb-7 text-24 md:text-28 lg:text-30 xl:text-36;
+}
+
+p,
+li:not(nav li) {
+  a {
+    @apply font-bold;
+
+    background: linear-gradient(to right, #39FFBA, #39FFBA), linear-gradient(to right, #000F5A, #000F5A);
+    background-size:
+    100% 2px,
+    0 2px;
+    background-position:
+    100% 100%,
+    0 100%;
+    background-repeat: no-repeat;
+    transition:
+    background-size 0.5s ease-in-out,
+    color 0.4s;
+
+    &:hover,
+    &:focus {
+      background-size:
+        0 2px,
+        100% 2px;
+    }
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+}
+
+ul:not(nav ul) {
+  @apply list-none mb-7;
+
+  li {
+    @apply relative inline-block w-full py-1 pl-5 leading-8;
+
+    &::before {
+      top: 1.1rem;
+
+      @apply content-[''] absolute left-0 block h-1.5 w-1.5 rounded-full bg-blue-900;
+    }
+  }
+}
+
+p, ul, ol {
+  & + p, & + h1, & + h2, & + h3, & + ul, & + ol {
+    @apply mt-7;
+  }
+}
+
+.bg-blue-900 {
+  p,
+  li {
+    @apply text-white;
+    
+    a {
+      background: linear-gradient(to right, #39FFBA, #39FFBA), linear-gradient(to right, #FFF, #FFF);
+      background-size:
+      100% 2px,
+      0 2px;
+      background-position:
+      100% 100%,
+      0 100%;
+      background-repeat: no-repeat;
+  
+      &:hover,
+      &:focus {
+        background-size:
+          0 2px,
+          100% 2px;
+      }
+    }
+  }
+
+  ul:not(.nav ul) {
+    li {
+      &::before {
+        @apply bg-white;
+      }
+    }
+  }
+}
+
+.unbreakable {
+  @apply whitespace-nowrap;
+}

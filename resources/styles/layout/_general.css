@@ -1,0 +1,101 @@
+html {
+    scroll-behavior: smooth;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    @apply w-[100vw] h-[100vh] overflow-hidden;
+
+    .bodyWrapper {
+        @apply relative w-[100vw] h-[100vh] bg-white overflow-auto transition-opacity duration-500;
+    }
+
+    &.loaded {
+        .bodyWrapper {
+            opacity: 1 !important;
+        }
+    }
+
+    &.menu-shown {
+        .bodyWrapper {
+            @apply overflow-hidden;
+        }
+    }
+}
+
+section {
+    @apply relative z-20;
+}
+
+.container {
+    @apply relative mx-auto block max-w-[1440px] 3xl:max-w-[1920px];
+
+    &--small {
+        @apply max-w-[1500px];
+    }
+
+    &--smaller {
+        @apply max-w-[800px];
+    }
+}
+
+/* PADDING Y */
+.padd {
+    @apply py-10 md:py-14 lg:py-20 xl:py-24;
+
+    &--small {
+        @apply py-7 md:py-8 lg:py-10;
+    }
+
+    & + .padd {
+        @apply pt-0;
+    }
+
+    &--top {
+        @apply pb-0;
+    }
+
+    &--bottom {
+        @apply pt-0;
+    }
+}
+
+/* PADDING X */
+.wrap {
+    @apply px-4 md:px-8 xl:px-20;
+
+    &--left {
+        @apply pr-0;
+    }
+
+    &--right {
+        @apply pl-0;
+    }
+}
+
+section.bg-white + section.bg-white .padd {
+    @apply pt-0;
+}
+
+.otgs-development-site-front-end {
+    @apply hidden;
+}
+
+@media screen and (min-width: 1025px) {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-blue-900;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-green-500 rounded-full;
+    }
+    
+    *::selection {
+        @apply bg-blue-900 text-green-500;
+    }
+}

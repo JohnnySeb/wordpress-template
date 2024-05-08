@@ -1,1 +1,19 @@
-/* Editor styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.block-editor-inserter__block-list {
+    & > div {
+        & > div {
+            @apply hidden;
+
+            &:nth-child(1), &:nth-child(2) {
+                @apply inline-flex;
+            }
+        }
+    }
+}
+
+.block-editor-inserter__tips {
+    @apply hidden;
+}
