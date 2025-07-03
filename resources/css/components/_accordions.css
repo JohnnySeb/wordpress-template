@@ -1,0 +1,54 @@
+/* stylelint-disable selector-class-pattern */
+.accordion {
+    @apply border-b border-blue-900/25 last:border-0 duration-500;
+
+    .accordion-header {
+        @apply relative flex justify-between py-7 pr-[60px] cursor-pointer;
+
+        button {
+            @apply text-blue-900 text-18 md:text-20 font-medium duration-300;
+        }
+
+        .plusMinus {
+            @apply absolute top-7 right-0 w-[35px] h-[35px] rounded-full bg-white;
+
+            span {
+                @apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-[16px] h-[2px] rounded-full bg-blue-900 duration-300;
+
+                &:last-child {
+                    @apply rotate-90;
+                }
+            }
+        }
+
+        &:hover {
+            button {
+                @apply text-blue-400;
+            }
+        }
+
+        &.active {
+            button {
+                @apply text-blue-400;
+            }
+
+            .plusMinus {
+                span {
+                    @apply bg-green-500;
+
+                    &:last-child {
+                        @apply rotate-0;
+                    }
+                }
+            }
+        }
+    }
+
+    .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+
+        @apply md:pr-[50px];
+    }
+}

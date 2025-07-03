@@ -1,0 +1,7 @@
+header#main-nav {
+    @apply fixed top-0 left-0 w-full h-48 bg-[pink] duration-500 z-[69];
+
+    body:not(.menu-shown) &.hideNav {
+        @apply -translate-y-full;
+    }
+}

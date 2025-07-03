@@ -1,0 +1,52 @@
+/* TYPOGRAPHY */
+.editor-styles-wrapper {
+    .wp-block-post-title {
+        @apply font-display font-normal text-36 opacity-20;
+    }
+
+    .is-desktop-preview {
+        @apply font-body text-14 leading-8 text-gray-700;
+    }
+    
+    .is-desktop-preview {
+        h1,
+        .h1 {
+            @apply font-display relative block mb-4 text-48;
+        }
+    
+        h2,
+        .h2 {
+            @apply font-display relative block mb-4 text-36;
+        }
+    
+        h3,
+        .h3 {
+            @apply font-display relative block mb-4 text-30;
+        }
+    
+        h4,
+        .h4 {
+            @apply font-display relative block mb-4 text-24;
+        }
+    
+        h5,
+        .h5 {
+            @apply font-display relative block mb-4 text-20;
+        }
+    
+        h6,
+        .h6 {
+            @apply font-display relative block mb-4 text-18;
+        }
+    
+        p, ul, ol {
+            & + p, & + h1, & + h2, & + h3, & + ul, & + ol {
+                @apply mt-7;
+            }
+        }
+    
+        a {
+            text-decoration: none !important;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+/* stylelint-disable selector-class-pattern */
+.btn-wrapper {
+    @apply flex flex-col md:flex-row flex-wrap items-start md:items-center gap-4 md:gap-6 mt-10;
+}
+
+.btn {
+    @apply relative flex items-center gap-2 font-semibold rounded-full whitespace-nowrap text-18 duration-300;
+
+    &.--bgBlack {
+        @apply px-7 py-3 bg-gray-700 text-white hover:bg-gray-900;
+    }
+
+    &.--bgWhite {
+        @apply px-6 py-[10px] bg-white border text-gray-700 border-gray-900;
+    }
+
+    &.--txtBlack {
+        @apply text-gray-700 hover:text-gray-900;
+    }
+
+    &.--txtWhite {
+        @apply text-white hover:text-gray-900;
+    }
+}

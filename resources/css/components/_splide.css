@@ -1,0 +1,5 @@
+@import '@splidejs/splide/dist/css/splide.min.css';
+
+.splide {
+    @apply px-24;
+}

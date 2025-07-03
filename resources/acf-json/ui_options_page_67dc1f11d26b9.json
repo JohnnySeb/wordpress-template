@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_67dc1f11d26b9",
+    "title": "Options avancées",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Options avancées",
+    "menu_slug": "advanced-options",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Options avancées",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-admin-generic"
+    },
+    "update_button": "Mise à jour",
+    "updated_message": "Options mises à jours",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1742479201
+}

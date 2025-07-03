@@ -1,0 +1,126 @@
+/* stylelint-disable no-descending-specificity */
+body {
+  @apply font-body text-16 leading-8 text-gray-700;
+
+  font-variant-ligatures: none !important;
+  font-feature-settings: "liga" 0 !important;
+}
+
+h1,
+.h1 {
+  @apply relative block mb-10 lg:mb-12 text-48 lg:text-60 2xl:text-72;
+}
+
+h2,
+.h2 {
+  @apply relative block mb-7 text-36 lg:text-48 2xl:text-60;
+}
+
+h3,
+.h3 {
+  @apply relative block mb-7 text-30 lg:text-36 2xl:text-48;
+}
+
+h4,
+.h4 {
+  @apply relative block mb-4 lg:mb-6 text-24 lg:text-30 2xl:text-36;
+}
+
+h5,
+.h5 {
+  @apply relative block mb-4 lg:mb-5 text-20 lg:text-24 2xl:text-30;
+}
+
+h6,
+.h6 {
+  @apply relative block mb-4 lg:mb-4 text-18 lg:text-20 2xl:text-24;
+}
+
+p,
+li:not(header li) {
+  a {
+    @apply font-bold;
+
+    background: linear-gradient(to right, #39FFBA, #39FFBA), linear-gradient(to right, #000F5A, #000F5A);
+    background-size:
+    100% 2px,
+    0 2px;
+    background-position:
+    100% 100%,
+    0 100%;
+    background-repeat: no-repeat;
+    transition:
+    background-size 0.5s ease-in-out,
+    color 0.4s;
+
+    &:hover,
+    &:focus {
+      background-size:
+        0 2px,
+        100% 2px;
+    }
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+}
+
+/* LISTS UL - OL */
+section {
+  ul {
+    @apply list-none mb-7;
+  
+    li {
+      @apply relative inline-block w-full py-1 pl-5 leading-8;
+  
+      &::before {
+        top: 1.1rem;
+  
+        @apply content-[''] absolute left-0 block h-1.5 w-1.5 rounded-full bg-blue-900;
+      }
+    }
+  }
+
+  ol {
+    list-style: none;
+    counter-reset: item;
+
+    li {
+      @apply flex items-start shrink-0 relative w-full py-1 leading-8;
+
+      counter-increment: item;
+
+      &::before {
+          content: counter(item) ".";
+          display: flex;
+          flex-shrink: 0;
+          width: 1.5rem;
+          text-align: left;
+
+          /* margin-right: 0.6rem; */
+          margin-top: 1px;
+      }
+
+      p {
+          @apply mb-0;
+      }
+    }
+  }
+
+  * + ul,
+  * + ol {
+      @apply mt-7;
+  }
+
+  ul + *,
+  ol + * {
+      @apply mt-7;
+  }
+}
+
+p, ul, ol {
+  & + p, & + h1, & + h2, & + h3, & + ul, & + ol {
+    @apply mt-7;
+  }
+}

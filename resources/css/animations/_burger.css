@@ -1,0 +1,212 @@
+/* 
+    HTML EXEMPLE:
+    <button type="button" name="menu-trigger" class="burger --flat">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+*/
+
+.burger {
+    @apply relative w-[28px] h-[18px] cursor-pointer;
+
+    span {
+        @apply absolute block w-full h-[2px] left-1/2 -translate-x-1/2 bg-secondary;
+
+        &:nth-child(1) {
+            @apply top-0;
+        }
+        &:nth-child(2) {
+            @apply top-1/2 -translate-y-1/2;
+        }
+        &:nth-child(3) {
+            @apply bottom-0;
+        }
+    }
+
+    &.--flat {
+        span {
+            &:nth-child(1) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s;
+            }
+            &:nth-child(2) {
+                transition: all 0.3s;
+            }
+            &:nth-child(3) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    @apply top-1/2 rotate-45 -translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s;
+                }
+                &:nth-child(2) {
+                    @apply opacity-0;
+                }
+                &:nth-child(3) {
+                    @apply bottom-1/2 -rotate-45 translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s;
+                }
+            }
+        }
+    }
+
+    /* &.--arrow-right {
+        span {
+            @apply left-auto right-0 translate-x-0 origin-right;
+
+            &:nth-child(1) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s,
+                    width 0.3s;
+            }
+            &:nth-child(3) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s,
+                    width 0.3s;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    @apply w-1/2 top-1/2 rotate-45 -translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s,
+                        width 0.3s 0.3s;
+                }
+                &:nth-child(3) {
+                    @apply w-1/2 bottom-1/2 -rotate-45 translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s,
+                        width 0.3s 0.3s;
+                }
+            }
+        }
+    } */
+
+    /* &.--arrow-left {
+        span {
+            @apply left-0 translate-x-0 origin-left;
+
+            &:nth-child(1) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s,
+                    width 0.3s;
+            }
+            &:nth-child(3) {
+                transition:
+                    all 0.3s 0.3s,
+                    transform 0.3s,
+                    width 0.3s;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    @apply w-1/2 top-1/2 rotate-45 -translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s,
+                        width 0.3s 0.3s;
+                }
+                &:nth-child(3) {
+                    @apply w-1/2 bottom-1/2 -rotate-45 translate-y-1/2;
+                    transition:
+                        all 0.3s,
+                        transform 0.3s 0.3s,
+                        width 0.3s 0.3s;
+                }
+            }
+        }
+    } */
+
+    /* &.--swipe-right {
+        span {
+            &:nth-child(1) {
+                transition: all 0.3s;
+            }
+            &:nth-child(2) {
+                @apply left-auto right-0 translate-x-0;
+                transition:
+                    width 0.3s 0.2s,
+                    opacity 0.1s 0.2s;
+            }
+            &:nth-child(3) {
+                transition: all 0.3s;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    @apply top-1/2 rotate-45 -translate-y-1/2;
+                    transition: all 0.3s 0.3s;
+                }
+                &:nth-child(2) {
+                    @apply w-1 opacity-0;
+                    transition:
+                        width 0.3s,
+                        opacity 0.1s 0.3s;
+                }
+                &:nth-child(3) {
+                    @apply bottom-1/2 -rotate-45 translate-y-1/2;
+                    transition: all 0.3s 0.3s;
+                }
+            }
+        }
+    } */
+
+    /* &.--swipe-left {
+        span {
+            &:nth-child(1) {
+                transition: all 0.3s;
+            }
+            &:nth-child(2) {
+                @apply left-0 translate-x-0;
+                transition:
+                    width 0.3s 0.2s,
+                    opacity 0.1s 0.2s;
+            }
+            &:nth-child(3) {
+                transition: all 0.3s;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    @apply top-1/2 -rotate-45 -translate-y-1/2;
+                    transition: all 0.3s 0.3s;
+                }
+                &:nth-child(2) {
+                    @apply w-1 opacity-0;
+                    transition:
+                        width 0.3s,
+                        opacity 0.1s 0.3s;
+                }
+                &:nth-child(3) {
+                    @apply bottom-1/2 rotate-45 translate-y-1/2;
+                    transition: all 0.3s 0.3s;
+                }
+            }
+        }
+    } */
+}

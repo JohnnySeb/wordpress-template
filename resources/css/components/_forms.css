@@ -1,0 +1,146 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable selector-class-pattern */
+body {
+    .gform_fields {
+        @apply gap-y-[20px] md:gap-y-[35px] !important;
+    }
+
+    .gform_heading {
+        @apply hidden !important;
+    }
+
+    .gform_title {
+        @apply text-blue-900 text-center !important;
+    }
+
+    .gfield_label {
+        @apply font-medium text-14 md:text-16 text-blue-900 !important;
+    }
+
+    .gform_required_legend {
+        @apply hidden text-blue-900 !important;
+    }
+
+    .gfield_required {
+        @apply text-blue-900 !important;
+    }
+
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    [type='checkbox'],
+    [type='radio'],
+    textarea,
+    select {
+        @apply text-blue-900 !px-4 !py-2 rounded-lg border-gray-300 border transition-all duration-300 focus:border-green-500 !shadow-none outline-0 ring-0 ring-offset-0 outline-offset-0 focus:ring-1 ring-green-500 !important;
+    }
+
+    select {
+        @apply text-ellipsis overflow-hidden whitespace-nowrap focus:outline-0 !pr-8 focus:ring-1 ring-green-500 !important;
+
+        background-image: url('data:image/svg+xml,%3csvg xmlns=%27<http://www.w3.org/2000/svg%27> fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%23000000%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271%27 d=%27M6 8l5 5 5-5%27/%3e%3c/svg%3e') !important;
+    }
+
+    [type='checkbox'] {
+        @apply rounded-[2px] !p-0 !important;
+    }
+
+    [type='radio'] {
+        @apply rounded-full !p-0 !important;
+    }
+
+    [type='checkbox']:checked,
+    [type='radio']:checked {
+        @apply bg-gray-300 !important;
+    }
+
+    .gform_drop_area {
+        @apply bg-white !important;
+
+        button {
+            @apply px-4 py-1 bg-gray-200 text-gray-500 hover:bg-gray-300 hover:text-white transition-colors ease-in duration-300 rounded-[8px] !important;
+        }
+    }
+
+    /* VALIDATIONS */
+    .gform_validation_errors {
+        @apply mb-7 rounded-lg p-0 bg-white/0 border-none text-red-500 shadow-none !important;
+
+        h2 {
+            @apply text-center max-w-md font-normal text-red-500 !mx-auto !important;
+
+            .gform-icon {
+                @apply hidden !important;
+            }
+        }
+    }
+
+    .gfield_validation_message {
+        @apply border-none bg-white/0 !p-0 mt-0 text-[12px] text-red-500 !important;
+
+        line-height: 1.5 !important;
+
+        &::before {
+            @apply hidden !important;
+        }
+    }
+
+    .gfield_error {
+        label {
+            @apply text-red-500 !important;
+        }
+
+        [aria-invalid='true'] {
+            @apply border-red-500 !important;
+        }
+
+        .gfield_required {
+            @apply text-red-500 !important;
+        }
+
+        [aria-invalid='true'] {
+            @apply focus:border-gray-300 focus:outline-0 !important;
+        }
+    }
+
+    .gform_button, input[type="submit"] {
+        @apply inline-block relative text-16 xl:text-18 py-2 lg:py-3 px-5 lg:px-7 overflow-hidden font-medium duration-500 hover:drop-shadow-md hover:bg-blue-900 hover:text-white rounded-full bg-green-500 text-blue-900 cursor-pointer mt-4 !important;
+    }
+
+    .gform_confirmation_wrapper {
+        @apply text-center !important;
+
+        .gform_confirmation_message {
+            @apply font-bold !important;
+        }
+    }
+
+    span.gfield_description,
+    p {
+        @apply text-[15px] !text-gray-400 !important;
+    }
+
+    .gform-icon.gform-icon--circle-error {
+        @apply hidden !important;
+    }
+
+    .moxie-shim-html5 {
+        @apply hidden !important;
+    }
+
+    @media screen and (max-width: 768px) {
+        .gform_button_select_files {
+            font-size: 15px !important;
+        }
+    }
+}

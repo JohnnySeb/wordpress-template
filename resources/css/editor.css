@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@import "./_theme_variables.css";
+@import "./layout/_general.css";
+
+/* TYPOGRAPHY */
+@import "./fonts/_fontfaces.css";
+
+/* COMPONENTS */
+@import "./components/_buttons.css";
+
+/* EDITOR SPECIFICS */
+@import "./editor/_editor_layout.css";
+@import "./editor/_editor_splide.css";
+@import "./editor/_editor_typography.css";

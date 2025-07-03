@@ -1,0 +1,24 @@
+@import "tailwindcss" theme(static);
+@source "../views/";
+@source "../../app/";
+
+/* THEME VARIABLES */
+@import "./_theme_variables.css";
+
+/* LAYOUT */
+@import "./layout/_general.css";
+@import "./layout/_header.css";
+@import "./layout/_footer.css";
+
+/* TYPOGRAPHY */
+@import "./fonts/_fontfaces.css";
+@import "./fonts/_typography.css";
+
+/* COMPONENTS */
+@import "./components/_accordions.css";
+@import "./components/_buttons.css";
+@import "./components/_splide.css";
+
+/* ANIMATIONS */
+@import "./animations/_insight.css";
+@import "./animations/_keyframes.css";

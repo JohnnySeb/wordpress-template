@@ -1,0 +1,96 @@
+/* stylelint-disable selector-class-pattern */
+html {
+    scroll-behavior: smooth;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    @apply bg-white transition-opacity duration-500;
+
+    &.loaded {
+        opacity: 1 !important;
+    }
+
+    &.menu-shown {
+        @apply overflow-hidden;
+    }
+}
+
+section {
+    @apply relative z-20;
+}
+
+.container {
+    @apply relative mx-auto block max-w-[1560px];
+
+    &.--small {
+        @apply max-w-[1100px] 3xl:max-w-[1300px];
+    }
+
+    &.--smaller {
+        @apply max-w-[1024px] 3xl:max-w-[1200px];
+    }
+}
+
+/* PADDING Y */
+body .padd {
+    @apply py-16 md:py-20 lg:py-24 xl:py-36;
+
+    &--small {
+        @apply py-7 md:py-8 lg:py-10;
+    }
+
+    & + .padd {
+        @apply pt-0;
+    }
+
+    &--top {
+        @apply pb-0;
+    }
+
+    &--bottom {
+        @apply pt-0;
+    }
+}
+
+/* PADDING X */
+body .wrap {
+    @apply !px-4 md:!px-8 xl:!px-10 2xl:!px-4;
+
+    &--left {
+        @apply !pr-0;
+    }
+
+    &--right {
+        @apply !pl-0;
+    }
+}
+
+section.bg-white + section.bg-white .padd {
+    @apply pt-0;
+}
+
+section.bg-gray-100 + section.bg-gray-100 .padd {
+    @apply pt-0;
+}
+
+.otgs-development-site-front-end {
+    @apply hidden;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-700;
+}
+
+*::selection {
+    @apply bg-gray-100 text-gray-800;
+}
